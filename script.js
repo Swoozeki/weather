@@ -90,7 +90,7 @@ function displayHourlyForecast(forecast){
 function getWeather(location){
   const [latitude, longitude] = [location.coords.latitude, location.coords.longitude];
   const key = '8df0ae087100c2f2';
-  const endpoint = `http://api.wunderground.com/api/${key}/conditions/hourly10day/forecast10day/q/${latitude},${longitude}.json`
+  const endpoint = `https://api.wunderground.com/api/${key}/conditions/hourly10day/forecast10day/q/${latitude},${longitude}.json`
 
   const xhr= new XMLHttpRequest();
   xhr.open('GET', endpoint);
