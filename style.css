@@ -1,0 +1,77 @@
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#container{
+  display: grid;
+  grid-template-columns: 2fr 1fr 3fr 1fr 1fr;
+  grid-template-areas:
+    "location previous weather next ."
+    ". . weather . ."
+    "empty empty weather . ."
+    ". . weather . reset";
+}
+#container{
+  border: 1px solid #000;
+  width: 600px;
+  padding: 5px 0;
+
+  justify-items: center;
+}
+#location{
+  grid-area: location;
+  text-align: center;
+}
+#weather{
+  grid-area: weather;
+}
+#previous{
+  grid-area: previous;
+  height: 40px;
+}
+#next{
+  grid-area: next;
+  height: 40px;
+}
+#reset{
+  grid-area: reset;
+  height: 20px;
+}
+#previous:hover,#next:hover,#reset:hover{
+  cursor: pointer;
+}
+#forecast{
+  width: 600px;
+  display: grid;
+  overflow-x: scroll;
+
+  position: relative;
+  height: 100%;
+
+  color: white;
+}
+.forecast-subsection{
+  text-align: center;
+}
+
+/*--------------------------*/
+#units{
+  display: grid;
+  grid-template-areas: "fahrenheit celcius";
+  width: 100px;
+  border: 1px solid #000;
+}
+#units button{
+  outline: none;
+  border: none;
+  background-color: #fff;
+  color: #000;
+}
+#units button.active{
+  background-color: #000;
+  color: #fff;
+}
+/*--------------------------*/
