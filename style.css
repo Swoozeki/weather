@@ -40,6 +40,11 @@ body{
   flex-direction: column;
   align-items: center;
 }
+#icon{
+  max-width: 200px;
+}
+/*-------------------------*/
+
 #previous, #next{
   margin: 0 auto;
 }
@@ -58,6 +63,8 @@ body{
 #previous:hover,#next:hover,#reset:hover{
   cursor: pointer;
 }
+
+/*-------------------------*/
 #forecast{
   display: flex;
   overflow-x: scroll;
@@ -69,8 +76,8 @@ body{
   text-align: center;
   flex: 0 0 150px;
 }
-
 /*--------------------------*/
+
 #units{
   display: grid;
   grid-template-areas: "fahrenheit celcius";

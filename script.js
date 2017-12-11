@@ -1,6 +1,7 @@
 const fahrenheitEl = document.getElementById('fahrenheit');
 const celsiusEl = document.getElementById('celsius');
 const unitChange = new Event('unit-change');
+const weatherEl = document.getElementById('weather');
 const locationEl = document.getElementById('location');
 const timeEl = document.getElementById('time');
 const iconEl = document.getElementById('icon');
