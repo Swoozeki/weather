@@ -78,8 +78,8 @@ function displayHourlyForecast(forecast){
       template.description.textContent= observation.description;
       template.degree.textContent= observation.degree;
 
-      forecastEl.style.gridTemplateColumns= `repeat(${i+1}, 20%)`;
-      forecastEl.style.background= `linear-gradient(${unformattedTime.getHours()<=12?'to right':'to left'}, #000, #95a5a6)`;
+      // forecastEl.style.gridTemplateColumns= `repeat(${i+1}, 20%)`;
+      // forecastEl.style.background= `linear-gradient(${unformattedTime.getHours()<=12?'to right':'to left'}, #000, #95a5a6)`;
       forecastEl.appendChild(template.section);
   })
 

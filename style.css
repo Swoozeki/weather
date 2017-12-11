@@ -2,31 +2,46 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
+
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 5px;
 }
 
 #container{
   display: grid;
-  grid-template-columns: 2fr 1fr 3fr 1fr 1fr;
+  grid-template-columns: 1fr 3fr 1fr;
+  /* grid-template-columns:  */
   grid-template-areas:
-    "location previous weather next ."
-    ". . weather . ."
-    "empty empty weather . ."
-    ". . weather . reset";
-}
-#container{
-  border: 1px solid #000;
-  width: 600px;
-  padding: 5px 0;
+    "location location location"
+    ". weather ."
+    "previous weather next"
+    ". weather .";
 
-  justify-items: center;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    padding-bottom: 10px;
 }
 #location{
   grid-area: location;
   text-align: center;
+  width: 100%;
+
+  margin: 0;
+  padding: 20px 0;
+  background-color: #000;
+  color: #fff;
 }
 #weather{
   grid-area: weather;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#previous, #next{
+  margin: 0 auto;
 }
 #previous{
   grid-area: previous;
@@ -44,24 +59,22 @@ body{
   cursor: pointer;
 }
 #forecast{
-  width: 600px;
-  display: grid;
+  display: flex;
   overflow-x: scroll;
 
-  position: relative;
-  height: 100%;
-
-  color: white;
+  background-color: #000;
+  color: #fff;
 }
 .forecast-subsection{
   text-align: center;
+  flex: 0 0 150px;
 }
 
 /*--------------------------*/
 #units{
   display: grid;
   grid-template-areas: "fahrenheit celcius";
-  width: 100px;
+  width: 200px;
   border: 1px solid #000;
 }
 #units button{
