@@ -65,13 +65,13 @@ function displayHourlyForecast(forecast){
     }
 
   }
-
+  console.log(forecast[0]);
   forecast.forEach((hour, i) => {
       const template = create.template();
       const unformattedTime= new Date(hour.FCTTIME.epoch*1000);
       const time = template.time.textContent= formatTime(new Date(hour.FCTTIME.epoch*1000), 'hh:mmA');
       const observation= {
-        icon: hour.icon_url,
+        icon: hour.icon_url.replace(/http/, 'https'),
         description: hour.condition,
         degree: localStorage.unit==='celsius'?formatDegree(hour.temp.metric, 'celsius'):formatDegree(hour.temp.english, 'fahrenheit') //.english
       };
