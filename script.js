@@ -22,7 +22,7 @@ function displayWeather(weather, current){
     location = locationEl.textContent= weather.display_location.full;
     time = timeEl.textContent= formatTime(new Date(weather.local_epoch*1000));
     observation= {
-      icon: weather.icon_url,
+      icon: weather.icon_url.replace(/http/, 'https'),
       description: weather.weather,
       degree: localStorage.unit==='celsius'?formatDegree(weather.temp_c,'celsius'):formatDegree(weather.temp_f,'fahrenheit')
     }
@@ -30,7 +30,7 @@ function displayWeather(weather, current){
   else if(!current){ //ie not current observation
     time = timeEl.textContent= formatTime(new Date(weather.date.epoch*1000));
     observation= {
-      icon: weather.icon_url,
+      icon: weather.icon_url.replace(/http/, 'https'),
       description: weather.conditions,
       degree: localStorage.unit==='celsius'?formatDegree(weather.high.celsius,'celsius'):formatDegree(weather.high.fahrenheit,'fahrenheit')
     }
@@ -65,7 +65,6 @@ function displayHourlyForecast(forecast){
     }
 
   }
-  console.log(forecast[0]);
   forecast.forEach((hour, i) => {
       const template = create.template();
       const unformattedTime= new Date(hour.FCTTIME.epoch*1000);
